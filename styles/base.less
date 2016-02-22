@@ -1,0 +1,404 @@
+@import "syntax-variables";
+
+atom-text-editor,
+:host {
+	background-color: @syntax-background-color;
+	color: @syntax-text-color;
+	
+	.wrap-guide {
+		background-color: @syntax-wrap-guide-color;
+	}
+	
+	.indent-guide {
+		color: @syntax-indent-guide-color;
+	}
+	
+	.invisible-character {
+		color: @syntax-invisible-character-color;
+	}
+	
+	.gutter {
+		color: @syntax-gutter-text-color;
+	}
+	
+	.invisible {
+		color: @syntax-text-color;
+	}
+	
+	.cursor {
+		border-color: @syntax-cursor-color;
+	}
+	
+	.selection .region {
+		background-color: @syntax-out-of-focus-selection-color;
+	}
+	
+	.is-focused {
+		.selection .region {
+			background-color: @syntax-selection-color;
+		}
+	}
+	
+	.line.cursor-line {
+		background-color: @syntax-cursor-line-color;
+	}
+	
+	.bracket-matcher .region {
+		border: 1px solid @syntax-bracket-matcher-color;
+		box-sizing: border-box;
+	}
+}
+
+atom-text-editor::shadow {
+	.find-result .region {
+		background-color: @syntax-result-marker-color;
+		border-radius: 0;
+		z-index: -1;
+	}
+	
+	.current-result .region,
+	.current-result ~ .highlight.selection .region {
+		background-color: @syntax-result-marker-color-selected;
+		border-color: @syntax-result-marker-color-selected;
+		border-radius: 0;
+		z-index: -1;
+	}
+}
+
+.comment {
+	color: @palette-4;
+	
+	.keyword {
+		color: inherit;
+	}
+	
+	.markup.link {
+		color: inherit;
+	}
+}
+
+.entity {
+	&.name {
+		&.type.class {
+			color: @hue-5;
+		}
+		
+		&.tag {
+			color: @hue-5;
+			
+			&.wildcard {
+				color: @palette-1;
+			}
+		}
+	}
+	
+	&.other {
+		&.attribute-name {
+			color: @hue-1;
+			
+			&.attribute {
+				color: @hue-5;
+			}
+			
+			&.parent-selector,
+			&.pseudo-class,
+			&.pseudo-element {
+				color: @palette-1;
+			}
+		}
+		
+		&.inherited-class {
+			color: @hue-5;
+		}
+	}
+}
+
+.keyword {
+	color: @hue-2;
+	
+	&.control.at-rule {
+		color: @hue-1;
+		
+		.keyword {
+			color: inherit;
+		}
+	}
+	
+	&.operator {
+		color: @palette-1;
+		
+		&.control,
+		&.logic.media,
+		&.delete,
+		&.in,
+		&.of,
+		&.instanceof,
+		&.new,
+		&.typeof,
+		&.void {
+			color: @hue-2;
+		}
+	}
+	
+	&.other.unit {
+		color: @hue-4;
+	}
+}
+
+.storage {
+	color: @hue-2;
+}
+
+.constant {
+	&.numeric {
+		color: @hue-4;
+	}
+	
+	&.language {
+		color: @hue-6;
+	}
+	
+	&.character.entity {
+		color: @hue-6;
+	}
+}
+
+.variable {
+	&.language {
+		color: @hue-2;
+	}
+	
+	&.other.property {
+		color: @hue-1;
+	}
+	
+	&.parameter.function {
+		color: @hue-1;
+	}
+}
+
+.string {
+	color: @hue-3;
+	
+	.keyword.operator {
+		color: inherit;
+	}
+}
+
+.punctuation {
+	&.section.embedded {
+		color: @hue-2;
+	}
+}
+
+.support {
+	&.constant {
+		&.media {
+			color: @hue-1;
+		}
+	}
+	
+	&.function {
+		color: @hue-1;
+	}
+	
+	&.type.property-name {
+		color: @hue-1;
+	}
+}
+
+.meta {
+	&.at-rule.import {
+		.support.function {
+			color: @hue-6;
+		}
+	}
+	
+	&.embedded {
+		color: @palette-1;
+	}
+	
+	&.function {
+		.entity.name.function {
+			color: @hue-1;
+		}
+	}
+	
+	&.method-call {
+		.entity.name.function {
+			color: @hue-1;
+		}
+	}
+	
+	&.property-value {
+		.constant {
+			color: @hue-6;
+			
+			&.numeric {
+				color: @hue-4;
+			}
+		}
+		
+		.variable.parameter {
+			color: @hue-3;
+		}
+		
+		.support {
+			&.constant.font-name {
+				color: @hue-5;
+			}
+			
+			&.function {
+				color: @hue-6;
+			}
+		}
+		
+		.punctuation.section.function {
+			& + .constant.other.color.rgb-value {
+				color: @hue-4;
+			}
+		}
+	}
+	
+	&.tag {
+		.punctuation.definition.string.html {
+			color: @palette-1;
+		}
+	}
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.invalid {
+	&.deprecated {
+		background-color: @syntax-color-modified;
+		color: @palette-3;
+	}
+	
+	&.illegal {
+		background-color: @syntax-color-removed;
+		color: @palette-3;
+	}
+}
+
+// Languages
+
+.markup {
+	&.bold {
+		color: @hue-5;
+		font-weight: bold;
+	}
+	
+	&.changed {
+		color: @syntax-color-modified;
+	}
+	
+	&.deleted {
+		color: @syntax-color-removed;
+	}
+	
+	&.italic {
+		color: @hue-3;
+		font-style: italic;
+	}
+	
+	&.heading {
+		color: @hue-1;
+	}
+	
+	&.link {
+		color: @hue-3;
+	}
+	
+	&.inserted {
+		color: @hue-2;
+	}
+	
+	&.quote {
+		color: @hue-5;
+	}
+	
+	&.raw {
+		color: @hue-2;
+	}
+}
+
+.source.js {
+	.support.constant {
+		color: @hue-1;
+	}
+}
+
+.source.less {
+	// NOTE: Remove if language-sass
+	// adds the "meta.property-value" token
+	// for variable values
+	
+	.constant.other.rgb-value {
+		color: @hue-6;
+	}
+	
+	.variable.parameter {
+		color: @hue-3;
+	}
+	
+	.support.constant {
+		&.color.w3c-standard-color-name {
+			color: @hue-6;
+		}
+		
+		&.font-name {
+			color: @hue-5;
+		}
+	}
+}
+
+.source.php {
+	.support.class {
+		color: @hue-5;
+	}
+	
+	.meta.function-call {
+		color: @hue-1;
+	}
+}
+
+.source.scss {
+	.entity.name.function {
+		color: @hue-1;
+	}
+	
+	// NOTE: Remove if language-sass
+	// adds the "meta.property-value" token
+	// for variable values
+	
+	.constant.other.color.rgb-value {
+		color: @hue-6;
+	}
+	
+	.variable.parameter {
+		color: @hue-3;
+	}
+	
+	.punctuation.section.function {
+		& + .constant.other.color.rgb-value {
+			color: @hue-4;
+		}
+	}
+	
+	.support.constant {
+		&.color.w3c-standard-color-name {
+			color: @hue-6;
+		}
+		
+		&.font-name {
+			color: @hue-5;
+		}
+		
+		&.property-value {
+			color: @hue-6;
+		}
+	}
+}

@@ -1,0 +1,16 @@
+{
+  "name": "firefox-light-syntax",
+  "theme": "syntax",
+  "version": "0.0.0",
+  "description": "A light syntax theme for Atom based on Firefox's Developer Tools",
+  "keywords": [
+    "light",
+    "syntax",
+    "theme"
+  ],
+  "repository": "https://github.com/gt-rios/firefox-light-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}
