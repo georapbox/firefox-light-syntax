@@ -325,6 +325,30 @@ atom-text-editor::shadow {
 	}
 }
 
+.source.coffee {
+	.entity.name.function {
+		color: @hue-1;
+	}
+	
+	.variable {
+		&.assignment {
+			color: @hue-1;
+		}
+		
+		// NOTE: Remove if language-coffee-script
+		// excludes the round braces from the
+		// "variable.parameter.function" token
+		
+		&.parameter.function {
+			color: @palette-1;
+		}
+	}
+	
+	.punctuation.section.embedded {
+		color: @palette-1;
+	}
+}
+
 .source.js {
 	.support.constant {
 		color: @hue-1;
