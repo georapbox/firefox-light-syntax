@@ -331,6 +331,28 @@ atom-text-editor::shadow {
 	}
 }
 
+.source.json {
+	.meta.structure {
+		&.dictionary {
+			& > .string.quoted {
+				color: @hue-1;
+				
+				& > .punctuation.string {
+					color: @palette-1;
+				}
+			}
+		}
+		
+		&.dictionary,
+		&.array {
+			& > .value > .string.quoted,
+			& > .value > .string.quoted > .punctuation {
+				color: @hue-3;
+			}
+		}
+	}
+}
+
 .source.less {
 	// NOTE: Remove if language-sass
 	// adds the "meta.property-value" token
