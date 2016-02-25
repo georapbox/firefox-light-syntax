@@ -79,6 +79,10 @@ atom-text-editor::shadow {
 
 .entity {
 	&.name {
+		&.function.constructor {
+			color: @hue-1;
+		}
+		
 		&.type.class {
 			color: @hue-1;
 		}
@@ -143,6 +147,10 @@ atom-text-editor::shadow {
 
 .storage {
 	color: @hue-2;
+	
+	&.type.arrow {
+		color: @palette-1;
+	}
 }
 
 .constant {
@@ -156,6 +164,10 @@ atom-text-editor::shadow {
 	
 	&.character.entity {
 		color: @hue-6;
+	}
+	
+	&.other.property {
+		color: @hue-1;
 	}
 }
 
@@ -230,8 +242,20 @@ atom-text-editor::shadow {
 		}
 	}
 	
+	&.method {
+		.entity.name.function {
+			color: @hue-1;
+		}
+	}
+	
 	&.method-call {
 		.entity.name.function {
+			color: @hue-1;
+		}
+	}
+	
+	&.function.arguments {
+		.variable.other {
 			color: @hue-1;
 		}
 	}
