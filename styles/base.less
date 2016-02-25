@@ -80,7 +80,7 @@ atom-text-editor::shadow {
 .entity {
 	&.name {
 		&.type.class {
-			color: @hue-5;
+			color: @hue-1;
 		}
 		
 		&.tag {
@@ -176,14 +176,28 @@ atom-text-editor::shadow {
 .string {
 	color: @hue-3;
 	
-	.keyword.operator {
+	.keyword.regexp {
 		color: inherit;
+	}
+	
+	.embedded {
+		color: @palette-1;
 	}
 }
 
 .punctuation {
 	&.section.embedded {
-		color: @hue-2;
+		&.coffee {
+			color: @hue-3;
+		}
+		
+		&.js {
+			color: @hue-3;
+		}
+		
+		&.php {
+			color: @hue-2;
+		}
 	}
 }
 
@@ -208,10 +222,6 @@ atom-text-editor::shadow {
 		.support.function {
 			color: @hue-6;
 		}
-	}
-	
-	&.embedded {
-		color: @palette-1;
 	}
 	
 	&.function {
