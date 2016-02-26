@@ -221,7 +221,7 @@ atom-text-editor::shadow {
 	}
 	
 	&.function {
-		color: @hue-1;
+		color: @hue-5;
 	}
 	
 	&.type.property-name {
@@ -256,6 +256,13 @@ atom-text-editor::shadow {
 	
 	&.function.arguments {
 		.variable.other {
+			color: @hue-1;
+		}
+	}
+	
+	&.function-call {
+		&.object,
+		&.static {
 			color: @hue-1;
 		}
 	}
@@ -379,6 +386,12 @@ atom-text-editor::shadow {
 	.support.constant {
 		color: @hue-1;
 	}
+	
+	.meta.delimiter.method {
+		& + .support.function {
+			color: @hue-1;
+		}
+	}
 }
 
 .source.json {
@@ -404,6 +417,10 @@ atom-text-editor::shadow {
 }
 
 .source.less {
+	.keyword.control.logical.operator {
+		color: @palette-1;
+	}
+	
 	// NOTE: Remove if language-sass
 	// adds the "meta.property-value" token
 	// for variable values
@@ -428,7 +445,7 @@ atom-text-editor::shadow {
 }
 
 .source.php {
-	.meta.function-call {
+	.support.function.magic {
 		color: @hue-1;
 	}
 }
