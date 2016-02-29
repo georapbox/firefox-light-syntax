@@ -68,10 +68,7 @@ atom-text-editor::shadow {
 .comment {
 	color: @palette-4;
 	
-	.keyword {
-		color: inherit;
-	}
-	
+	.keyword,
 	.markup.link {
 		color: inherit;
 	}
@@ -83,16 +80,16 @@ atom-text-editor::shadow {
 			color: @hue-1;
 		}
 		
-		&.type.class {
-			color: @hue-1;
-		}
-		
 		&.tag {
 			color: @hue-5;
 			
 			&.wildcard {
 				color: @palette-1;
 			}
+		}
+		
+		&.type.class {
+			color: @hue-1;
 		}
 	}
 	
@@ -128,12 +125,12 @@ atom-text-editor::shadow {
 		color: @palette-1;
 		
 		&.control,
-		&.logic.media,
 		&.delete,
 		&.in,
-		&.of,
 		&.instanceof,
+		&.logic.media,
 		&.new,
+		&.of,
 		&.typeof,
 		&.void {
 			color: @hue-2;
@@ -154,16 +151,16 @@ atom-text-editor::shadow {
 }
 
 .constant {
-	&.numeric {
-		color: @hue-4;
+	&.character.entity {
+		color: @hue-6;
 	}
 	
 	&.language {
 		color: @hue-6;
 	}
 	
-	&.character.entity {
-		color: @hue-6;
+	&.numeric {
+		color: @hue-4;
 	}
 	
 	&.other.property {
@@ -188,21 +185,18 @@ atom-text-editor::shadow {
 .string {
 	color: @hue-3;
 	
-	.keyword.regexp {
-		color: inherit;
-	}
-	
 	.embedded {
 		color: @palette-1;
+	}
+	
+	.keyword.regexp {
+		color: inherit;
 	}
 }
 
 .punctuation {
 	&.section.embedded {
-		&.coffee {
-			color: @hue-3;
-		}
-		
+		&.coffee,
 		&.js {
 			color: @hue-3;
 		}
@@ -214,10 +208,8 @@ atom-text-editor::shadow {
 }
 
 .support {
-	&.constant {
-		&.media {
-			color: @hue-1;
-		}
+	&.constant.media {
+		color: @hue-1;
 	}
 	
 	&.function {
@@ -236,18 +228,8 @@ atom-text-editor::shadow {
 		}
 	}
 	
-	&.function {
-		.entity.name.function {
-			color: @hue-1;
-		}
-	}
-	
-	&.method {
-		.entity.name.function {
-			color: @hue-1;
-		}
-	}
-	
+	&.function,
+	&.method,
 	&.method-call {
 		.entity.name.function {
 			color: @hue-1;
@@ -276,8 +258,10 @@ atom-text-editor::shadow {
 			}
 		}
 		
-		.variable.parameter {
-			color: @hue-3;
+		.punctuation.section.function {
+			& + .constant.other.color.rgb-value {
+				color: @hue-4;
+			}
 		}
 		
 		.support {
@@ -290,10 +274,8 @@ atom-text-editor::shadow {
 			}
 		}
 		
-		.punctuation.section.function {
-			& + .constant.other.color.rgb-value {
-				color: @hue-4;
-			}
+		.variable.parameter {
+			color: @hue-3;
 		}
 	}
 	
@@ -336,21 +318,21 @@ atom-text-editor::shadow {
 		color: @syntax-color-removed;
 	}
 	
+	&.heading {
+		color: @hue-1;
+	}
+	
+	&.inserted {
+		color: @hue-2;
+	}
+	
 	&.italic {
 		color: @hue-3;
 		font-style: italic;
 	}
 	
-	&.heading {
-		color: @hue-1;
-	}
-	
 	&.link {
 		color: @hue-3;
-	}
-	
-	&.inserted {
-		color: @hue-2;
 	}
 	
 	&.quote {
@@ -372,7 +354,7 @@ atom-text-editor::shadow {
 			color: @hue-1;
 		}
 		
-		// NOTE: Remove if language-coffee-script
+		// NOTE: Remove if atom/language-coffee-script
 		// excludes the round braces from the
 		// "variable.parameter.function" token
 		
@@ -383,14 +365,14 @@ atom-text-editor::shadow {
 }
 
 .source.js {
-	.support.constant {
-		color: @hue-1;
-	}
-	
 	.meta.delimiter.method {
 		& + .support.function {
 			color: @hue-1;
 		}
+	}
+	
+	.support.constant {
+		color: @hue-1;
 	}
 }
 
@@ -406,8 +388,8 @@ atom-text-editor::shadow {
 			}
 		}
 		
-		&.dictionary,
-		&.array {
+		&.array,
+		&.dictionary {
 			& > .value > .string.quoted,
 			& > .value > .string.quoted > .punctuation {
 				color: @hue-3;
@@ -421,16 +403,12 @@ atom-text-editor::shadow {
 		color: @palette-1;
 	}
 	
-	// NOTE: Remove if language-sass
+	// NOTE: Remove if atom/language-less
 	// adds the "meta.property-value" token
 	// for variable values
 	
 	.constant.other.rgb-value {
 		color: @hue-6;
-	}
-	
-	.variable.parameter {
-		color: @hue-3;
 	}
 	
 	.support.constant {
@@ -441,6 +419,10 @@ atom-text-editor::shadow {
 		&.font-name {
 			color: @hue-5;
 		}
+	}
+	
+	.variable.parameter {
+		color: @hue-3;
 	}
 }
 
@@ -455,16 +437,12 @@ atom-text-editor::shadow {
 		color: @hue-1;
 	}
 	
-	// NOTE: Remove if language-sass
+	// NOTE: Remove if atom/language-sass
 	// adds the "meta.property-value" token
 	// for variable values
 	
 	.constant.other.color.rgb-value {
 		color: @hue-6;
-	}
-	
-	.variable.parameter {
-		color: @hue-3;
 	}
 	
 	.punctuation.section.function {
@@ -485,5 +463,9 @@ atom-text-editor::shadow {
 		&.property-value {
 			color: @hue-6;
 		}
+	}
+	
+	.variable.parameter {
+		color: @hue-3;
 	}
 }
