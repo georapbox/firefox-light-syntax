@@ -245,10 +245,16 @@ atom-text-editor::shadow {
 		}
 	}
 	
-	&.definition.string {
-		&.html,
-		&.xml {
+	&.definition {
+		&.entry {
 			color: @palette-1;
+		}
+		
+		&.string {
+			&.html,
+			&.xml {
+				color: @palette-1;
+			}
 		}
 	}
 }
@@ -507,5 +513,15 @@ atom-text-editor::shadow {
 	
 	.variable.parameter {
 		color: @hue-3;
+	}
+}
+
+.source.yaml {
+	.entity.name.tag {
+		color: @hue-1;
+		
+		.punctuation.separator.key-value {
+			color: @palette-1;
+		}
 	}
 }
