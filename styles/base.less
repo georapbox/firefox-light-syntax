@@ -90,6 +90,14 @@ atom-text-editor::shadow {
 		
 		&.type.class {
 			color: @hue-1;
+			
+			.entity.other.inherited-class {
+				color: @palette-1;
+			}
+			
+			.punctuation.separator.inheritance {
+				color: @hue-2;
+			}
 		}
 	}
 	
@@ -137,8 +145,14 @@ atom-text-editor::shadow {
 		}
 	}
 	
-	&.other.unit {
-		color: @hue-4;
+	&.other {
+		&.special-method {
+			color: @hue-1;
+		}
+		
+		&.unit {
+			color: @hue-4;
+		}
 	}
 }
 
@@ -163,8 +177,14 @@ atom-text-editor::shadow {
 		color: @hue-4;
 	}
 	
-	&.other.property {
-		color: @hue-1;
+	&.other {
+		&.property {
+			color: @hue-1;
+		}
+		
+		&.symbol {
+			color: @hue-5;
+		}
 	}
 }
 
@@ -173,8 +193,25 @@ atom-text-editor::shadow {
 		color: @hue-2;
 	}
 	
-	&.other.property {
-		color: @hue-1;
+	&.other {
+		&.block {
+			color: @hue-1;
+		}
+		
+		&.property {
+			color: @hue-1;
+		}
+		
+		&.readwrite {
+			&.class,
+			&.instance {
+				color: @hue-1;
+			}
+			
+			&.global {
+				color: @hue-5;
+			}
+		}
 	}
 	
 	&.parameter.function {
@@ -197,10 +234,12 @@ atom-text-editor::shadow {
 .punctuation {
 	&.section.embedded {
 		&.coffee,
-		&.js {
+		&.js,
+		&.ruby {
 			color: @hue-3;
 		}
 		
+		&.erb,
 		&.php {
 			color: @hue-2;
 		}
