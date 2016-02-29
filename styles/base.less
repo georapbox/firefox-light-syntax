@@ -244,6 +244,13 @@ atom-text-editor::shadow {
 			color: @hue-2;
 		}
 	}
+	
+	&.definition.string {
+		&.html,
+		&.xml {
+			color: @palette-1;
+		}
+	}
 }
 
 .support {
@@ -317,12 +324,6 @@ atom-text-editor::shadow {
 			color: @hue-3;
 		}
 	}
-	
-	&.tag {
-		.punctuation.definition.string.html {
-			color: @palette-1;
-		}
-	}
 }
 
 .underline {
@@ -362,7 +363,7 @@ atom-text-editor::shadow {
 	}
 	
 	&.inserted {
-		color: @hue-2;
+		color: @hue-4;
 	}
 	
 	&.italic {
