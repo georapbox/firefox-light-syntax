@@ -142,6 +142,14 @@ atom-text-editor::shadow {
 		&.void {
 			color: @hue-2;
 		}
+		
+		&.logical {
+			&.php,
+			&.python,
+			&.ruby {
+				color: @hue-2;
+			}
+		}
 	}
 	
 	&.other {
@@ -269,6 +277,10 @@ atom-text-editor::shadow {
 	
 	&.function {
 		color: @hue-5;
+		
+		&.magic {
+			color: @hue-1;
+		}
 	}
 	
 	&.type.property-name {
@@ -482,12 +494,6 @@ atom-text-editor::shadow {
 	
 	.variable.parameter {
 		color: @hue-3;
-	}
-}
-
-.source.php {
-	.support.function.magic {
-		color: @hue-1;
 	}
 }
 
