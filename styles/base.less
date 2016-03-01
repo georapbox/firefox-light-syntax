@@ -68,8 +68,7 @@ atom-text-editor::shadow {
 .comment {
 	color: @palette-4;
 	
-	.keyword,
-	.markup.link {
+	.keyword {
 		color: inherit;
 	}
 }
@@ -232,6 +231,19 @@ atom-text-editor::shadow {
 }
 
 .punctuation {
+	&.definition {
+		&.entry {
+			color: @palette-1;
+		}
+		
+		&.string {
+			&.html,
+			&.xml {
+				color: @palette-1;
+			}
+		}
+	}
+	
 	&.section.embedded {
 		&.coffee,
 		&.js,
@@ -245,17 +257,8 @@ atom-text-editor::shadow {
 		}
 	}
 	
-	&.definition {
-		&.entry {
-			color: @palette-1;
-		}
-		
-		&.string {
-			&.html,
-			&.xml {
-				color: @palette-1;
-			}
-		}
+	&.separator.key-value {
+		color: @palette-1;
 	}
 }
 
@@ -352,7 +355,7 @@ atom-text-editor::shadow {
 
 .markup {
 	&.bold {
-		color: @hue-5;
+		color: @hue-1;
 		font-weight: bold;
 	}
 	
@@ -365,28 +368,28 @@ atom-text-editor::shadow {
 	}
 	
 	&.heading {
-		color: @hue-1;
+		color: @hue-5;
 	}
 	
 	&.inserted {
-		color: @hue-4;
+		color: @syntax-color-added;
 	}
 	
 	&.italic {
-		color: @hue-3;
+		color: @hue-1;
 		font-style: italic;
 	}
 	
-	&.link {
+	&.link.gfm {
 		color: @hue-3;
-	}
-	
-	&.quote {
-		color: @hue-5;
 	}
 	
 	&.raw {
 		color: @hue-2;
+	}
+	
+	&.strike {
+		color: @palette-4;
 	}
 }
 
@@ -407,6 +410,16 @@ atom-text-editor::shadow {
 		&.parameter.function {
 			color: @palette-1;
 		}
+	}
+}
+
+.source.gfm {
+	.entity {
+		color: @hue-1;
+	}
+	
+	.variable {
+		color: @hue-3;
 	}
 }
 
@@ -519,9 +532,5 @@ atom-text-editor::shadow {
 .source.yaml {
 	.entity.name.tag {
 		color: @hue-1;
-		
-		.punctuation.separator.key-value {
-			color: @palette-1;
-		}
 	}
 }
