@@ -74,9 +74,23 @@ atom-text-editor::shadow {
 }
 
 .entity {
+	&.c, &.clojure, &.cs, &.coffee, &.git-config, &.go, &.java, &.makefile, &.objc, &.objcpp, &.perl6, &.perl, &.php, &.python, &.ruby, &.shell, &.sql {
+		color: @hue-1;
+	}
+	
+	&.gfm {
+		color: @hue-1;
+	}
+	
 	&.name {
-		&.function.constructor {
-			color: @hue-1;
+		&.function {
+			&.constructor {
+				color: @hue-1;
+			}
+			
+			&.scss {
+				color: @hue-1;
+			}
 		}
 		
 		&.tag {
@@ -85,10 +99,19 @@ atom-text-editor::shadow {
 			&.wildcard {
 				color: @palette-1;
 			}
+			
+			&.yaml {
+				color: @hue-1;
+			}
 		}
 		
 		&.type {
 			color: @hue-1;
+			
+			&.instance,
+			&.object {
+				color: @hue-5;
+			}
 			
 			.punctuation.separator.inheritance {
 				color: @palette-1;
@@ -138,6 +161,10 @@ atom-text-editor::shadow {
 		}
 		
 		&.logical {
+			&.control {
+				color: @palette-1;
+			}
+			
 			&.python,
 			&.ruby {
 				color: @hue-2;
@@ -172,6 +199,11 @@ atom-text-editor::shadow {
 	}
 	
 	&.other {
+		&.color.rgb-value,
+		&.rgb-value {
+			color: @hue-6;
+		}
+		
 		&.property {
 			color: @hue-1;
 		}
@@ -183,6 +215,14 @@ atom-text-editor::shadow {
 }
 
 .variable {
+	&.c, &.clojure, &.cs, &.coffee, &.git-config, &.go, &.java, &.makefile, &.objc, &.objcpp, &.perl6, &.perl, &.python, &.ruby, &.shell, &.sql, &.toml {
+		color: @hue-1;
+	}
+	
+	&.gfm {
+		color: @hue-3;
+	}
+	
 	&.language {
 		color: @hue-2;
 	}
@@ -222,16 +262,24 @@ atom-text-editor::shadow {
 		}
 	}
 	
-	&.section.embedded {
-		&.coffee,
-		&.js,
-		&.ruby {
-			color: @hue-3;
+	&.section {
+		&.embedded {
+			&.coffee,
+			&.js,
+			&.ruby {
+				color: @hue-3;
+			}
+			
+			&.erb,
+			&.php {
+				color: @hue-2;
+			}
 		}
 		
-		&.erb,
-		&.php {
-			color: @hue-2;
+		&.function {
+			& + .constant.other.color.rgb-value {
+				color: @hue-4;
+			}
 		}
 	}
 	
@@ -241,8 +289,30 @@ atom-text-editor::shadow {
 }
 
 .support {
-	&.constant.media {
-		color: @hue-1;
+	&.class {
+		color: @hue-5;
+	}
+	
+	&.constant {
+		&.color.w3c-standard-color-name {
+			color: @hue-6;
+		}
+		
+		&.font-name {
+			color: @hue-5;
+		}
+		
+		&.js {
+			color: @hue-1;
+		}
+		
+		&.media {
+			color: @hue-1;
+		}
+		
+		&.property-value {
+			color: @hue-6;
+		}
 	}
 	
 	&.function {
@@ -265,6 +335,12 @@ atom-text-editor::shadow {
 		}
 	}
 	
+	&.delimiter.method {
+		& + .support.function {
+			color: @hue-1;
+		}
+	}
+	
 	&.function,
 	&.method,
 	&.method-call {
@@ -284,11 +360,39 @@ atom-text-editor::shadow {
 		&.static {
 			color: @hue-1;
 		}
+		
+		&.python {
+			color: @hue-1;
+			
+			.punctuation {
+				color: @palette-1;
+			}
+		}
 	}
 	
 	&.property-value {
 		.variable.parameter {
 			color: @hue-3;
+		}
+	}
+	
+	&.structure.json {
+		&.dictionary {
+			& > .string.quoted {
+				color: @hue-1;
+				
+				& > .punctuation.string {
+					color: @palette-1;
+				}
+			}
+		}
+		
+		&.array,
+		&.dictionary {
+			& > .value > .string.quoted,
+			& > .value > .string.quoted > .punctuation {
+				color: @hue-3;
+			}
 		}
 	}
 }
