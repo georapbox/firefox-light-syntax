@@ -87,12 +87,8 @@ atom-text-editor::shadow {
 			}
 		}
 		
-		&.type.class {
+		&.type {
 			color: @hue-1;
-			
-			.entity.other.inherited-class {
-				color: @palette-1;
-			}
 			
 			.punctuation.separator.inheritance {
 				color: @hue-2;
@@ -100,19 +96,17 @@ atom-text-editor::shadow {
 		}
 	}
 	
-	&.other {
-		&.attribute-name {
-			color: @hue-1;
-			
-			&.attribute {
-				color: @hue-5;
-			}
-			
-			&.parent-selector,
-			&.pseudo-class,
-			&.pseudo-element {
-				color: @palette-1;
-			}
+	&.other.attribute-name {
+		color: @hue-1;
+		
+		&.attribute {
+			color: @hue-5;
+		}
+		
+		&.parent-selector,
+		&.pseudo-class,
+		&.pseudo-element {
+			color: @palette-1;
 		}
 	}
 }
@@ -144,7 +138,6 @@ atom-text-editor::shadow {
 		}
 		
 		&.logical {
-			&.php,
 			&.python,
 			&.ruby {
 				color: @hue-2;
@@ -152,14 +145,8 @@ atom-text-editor::shadow {
 		}
 	}
 	
-	&.other {
-		&.special-method {
-			color: @hue-1;
-		}
-		
-		&.unit {
-			color: @hue-4;
-		}
+	&.other.unit {
+		color: @hue-4;
 	}
 }
 
@@ -200,25 +187,8 @@ atom-text-editor::shadow {
 		color: @hue-2;
 	}
 	
-	&.other {
-		&.block {
-			color: @hue-1;
-		}
-		
-		&.property {
-			color: @hue-1;
-		}
-		
-		&.readwrite {
-			&.class,
-			&.instance {
-				color: @hue-1;
-			}
-			
-			&.global {
-				color: @hue-5;
-			}
-		}
+	&.other.property {
+		color: @hue-1;
 	}
 	
 	&.parameter.function {
@@ -317,30 +287,6 @@ atom-text-editor::shadow {
 	}
 	
 	&.property-value {
-		.constant {
-			color: @hue-6;
-			
-			&.numeric {
-				color: @hue-4;
-			}
-		}
-		
-		.punctuation.section.function {
-			& + .constant.other.color.rgb-value {
-				color: @hue-4;
-			}
-		}
-		
-		.support {
-			&.constant.font-name {
-				color: @hue-5;
-			}
-			
-			&.function {
-				color: @hue-6;
-			}
-		}
-		
 		.variable.parameter {
 			color: @hue-3;
 		}
@@ -402,141 +348,5 @@ atom-text-editor::shadow {
 	
 	&.strike {
 		color: @palette-4;
-	}
-}
-
-.source.coffee {
-	.entity.name.function {
-		color: @hue-1;
-	}
-	
-	.variable {
-		&.assignment {
-			color: @hue-1;
-		}
-		
-		// NOTE: Remove if atom/language-coffee-script
-		// excludes the round braces from the
-		// "variable.parameter.function" token
-		
-		&.parameter.function {
-			color: @palette-1;
-		}
-	}
-}
-
-.source.gfm {
-	.entity {
-		color: @hue-1;
-	}
-	
-	.variable {
-		color: @hue-3;
-	}
-}
-
-.source.js {
-	.meta.delimiter.method {
-		& + .support.function {
-			color: @hue-1;
-		}
-	}
-	
-	.support.constant {
-		color: @hue-1;
-	}
-}
-
-.source.json {
-	.meta.structure {
-		&.dictionary {
-			& > .string.quoted {
-				color: @hue-1;
-				
-				& > .punctuation.string {
-					color: @palette-1;
-				}
-			}
-		}
-		
-		&.array,
-		&.dictionary {
-			& > .value > .string.quoted,
-			& > .value > .string.quoted > .punctuation {
-				color: @hue-3;
-			}
-		}
-	}
-}
-
-.source.less {
-	.keyword.control.logical.operator {
-		color: @palette-1;
-	}
-	
-	// NOTE: Remove if atom/language-less
-	// adds the "meta.property-value" token
-	// for variable values
-	
-	.constant.other.rgb-value {
-		color: @hue-6;
-	}
-	
-	.support.constant {
-		&.color.w3c-standard-color-name {
-			color: @hue-6;
-		}
-		
-		&.font-name {
-			color: @hue-5;
-		}
-	}
-	
-	.variable.parameter {
-		color: @hue-3;
-	}
-}
-
-.source.scss {
-	.entity.name.function {
-		color: @hue-1;
-	}
-	
-	// NOTE: Remove if atom/language-sass
-	// adds the "meta.property-value" token
-	// for variable values
-	
-	.constant.other.color.rgb-value {
-		color: @hue-6;
-	}
-	
-	.punctuation.section.function {
-		& + .constant.other.color.rgb-value {
-			color: @hue-4;
-		}
-	}
-	
-	.support.constant {
-		&.color.w3c-standard-color-name {
-			color: @hue-6;
-		}
-		
-		&.font-name {
-			color: @hue-5;
-		}
-		
-		&.property-value {
-			color: @hue-6;
-		}
-	}
-	
-	.variable.parameter {
-		color: @hue-3;
-	}
-}
-
-.source.yaml {
-	.entity.name.tag {
-		color: @hue-1;
 	}
 }
