@@ -93,6 +93,10 @@ atom-text-editor::shadow {
 			}
 		}
 		
+		&.section {
+			color: @hue-5;
+		}
+		
 		&.tag {
 			color: @hue-5;
 			
@@ -250,7 +254,8 @@ atom-text-editor::shadow {
 
 .punctuation {
 	&.definition {
-		&.entry {
+		&.entry,
+		&.table {
 			color: @palette-1;
 		}
 		
