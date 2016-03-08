@@ -188,8 +188,14 @@ atom-text-editor::shadow {
 .storage {
 	color: @hue-2;
 	
-	&.type.arrow {
-		color: @palette-1;
+	&.type {
+		&.arrow {
+			color: @palette-1;
+		}
+		
+		&.string {
+			color: @hue-2;
+		}
 	}
 }
 
@@ -214,6 +220,10 @@ atom-text-editor::shadow {
 		
 		&.property {
 			color: @hue-1;
+		}
+		
+		&.rune {
+			color: @hue-3;
 		}
 		
 		&.symbol {
@@ -268,6 +278,12 @@ atom-text-editor::shadow {
 			&.xml {
 				color: @palette-1;
 			}
+		}
+	}
+	
+	&.other.period {
+		& + .support.function {
+			color: @hue-1;
 		}
 	}
 	
@@ -465,5 +481,11 @@ atom-text-editor::shadow {
 	
 	&.strike {
 		color: @palette-4;
+	}
+}
+
+.source.go {
+	.entity.name.function {
+		color: @hue-1;
 	}
 }
