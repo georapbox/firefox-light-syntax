@@ -265,6 +265,12 @@ atom-text-editor::shadow {
 	& > .variable {
 		color: @palette-1;
 		
+		&.other.bracket {
+			& > .punctuation.definition.variable {
+				color: @hue-3;
+			}
+		}
+		
 		& > .punctuation.definition.variable {
 			color: inherit;
 		}
@@ -272,6 +278,15 @@ atom-text-editor::shadow {
 	
 	.embedded {
 		color: @palette-1;
+	}
+	
+	&.interpolated.shell,
+	&.other.math {
+		color: @palette-1;
+		
+		& > .punctuation.definition.string {
+			color: inherit;
+		}
 	}
 	
 	.keyword.regexp {
