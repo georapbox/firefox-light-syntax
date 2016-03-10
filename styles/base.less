@@ -262,31 +262,12 @@ atom-text-editor::shadow {
 .string {
 	color: @hue-3;
 	
-	& > .variable {
-		color: @palette-1;
-		
-		&.other.bracket {
-			& > .punctuation.definition.variable {
-				color: @hue-3;
-			}
-		}
-		
-		& > .punctuation.definition.variable {
-			color: inherit;
-		}
-	}
-	
 	.embedded {
 		color: @palette-1;
 	}
 	
-	&.interpolated.shell,
 	&.other.math {
 		color: @palette-1;
-		
-		& > .punctuation.definition.string {
-			color: inherit;
-		}
 	}
 	
 	.keyword.regexp {
@@ -302,6 +283,8 @@ atom-text-editor::shadow {
 		}
 		
 		&.string {
+			color: inherit;
+			
 			&.html,
 			&.xml {
 				color: @palette-1;
@@ -427,6 +410,10 @@ atom-text-editor::shadow {
 		.variable.parameter {
 			color: @hue-3;
 		}
+	}
+	
+	&.scope.prerequisites {
+		color: @hue-5;
 	}
 	
 	&.structure.json {
