@@ -173,6 +173,7 @@ atom-text-editor::shadow {
 				color: @palette-1;
 			}
 			
+			&.perl,
 			&.python,
 			&.ruby {
 				color: @hue-2;
@@ -213,6 +214,10 @@ atom-text-editor::shadow {
 	}
 	
 	&.other {
+		&.bareword,
+		&.key {
+			color: @hue-1;
+		}
 		&.color.rgb-value,
 		&.rgb-value {
 			color: @hue-6;
@@ -256,6 +261,14 @@ atom-text-editor::shadow {
 
 .string {
 	color: @hue-3;
+	
+	& > .variable {
+		color: @palette-1;
+		
+		& > .punctuation.definition.variable {
+			color: inherit;
+		}
+	}
 	
 	.embedded {
 		color: @palette-1;
