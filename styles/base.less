@@ -157,12 +157,14 @@ atom-text-editor::shadow {
 		color: @palette-1;
 		
 		&.control,
+		&.cpp,
 		&.delete,
 		&.in,
 		&.instanceof,
 		&.logic.media,
 		&.new,
 		&.of,
+		&.sizeof,
 		&.typeof,
 		&.void {
 			color: @hue-2;
@@ -362,6 +364,13 @@ atom-text-editor::shadow {
 	
 	&.function {
 		color: @hue-5;
+		
+		&.any-method {
+			&.c,
+			&.objc {
+				color: @hue-1;
+			}
+		}
 		
 		&.magic {
 			color: @hue-1;
