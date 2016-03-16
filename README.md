@@ -3,11 +3,11 @@
 A light syntax theme for [Atom](https://atom.io) based on
 [Firefox's Developer Tools](https://developer.mozilla.org/en/docs/Tools).
 It's currently been tested and optimized for the following
-languages: `CoffeeScript`, `CSS`, `Go`, `HTML`, `JavaScript`,
-`JSON`, `Less`, `Markdown (GFM)`, `Mustache`, `PHP`,
-`Property List`, `Python`, `Ruby`, `Sass`, `SCSS`, `SQL`,
-`TOML`, `XML`, `YAML`;
-and more to come in the next updates.
+languages: `C`, `C++`, `C#`, `Clojure`, `CoffeeScript`,
+`CSS`, `Go`, `HTML`, `Java`, `JavaScript`, `JSON`, `Less`,
+`Makefile`, `Markdown (GFM)`, `Mustache`, `Objective-C`,
+`Perl`, `PHP`, `Property List`, `Python`, `Ruby`, `Sass`,
+`SCSS`, `Shell Script`, `SQL`, `TOML`, `XML`, `YAML`.
 
 ![](https://cloud.githubusercontent.com/assets/17343833/13230528/ba7c281c-d973-11e5-8331-94ac8051da98.gif)
 
