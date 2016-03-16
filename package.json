@@ -1,7 +1,7 @@
 {
   "name": "firefox-light-syntax",
   "theme": "syntax",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "A light syntax theme for Atom based on Firefox's Developer Tools",
   "keywords": [
     "light",
