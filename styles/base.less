@@ -33,10 +33,8 @@ atom-text-editor,
 		background-color: @syntax-out-of-focus-selection-color;
 	}
 	
-	.is-focused {
-		.selection .region {
-			background-color: @syntax-selection-color;
-		}
+	.is-focused .selection .region {
+		background-color: @syntax-selection-color;
 	}
 	
 	.line.cursor-line {
@@ -287,10 +285,8 @@ atom-text-editor::shadow {
 		}
 	}
 	
-	&.other.period {
-		& + .support.function {
-			color: @hue-1;
-		}
+	&.other.period + .support.function {
+		color: @hue-1;
 	}
 	
 	&.section {
@@ -307,10 +303,8 @@ atom-text-editor::shadow {
 			}
 		}
 		
-		&.function {
-			& + .constant.other.color.rgb-value {
-				color: @hue-4;
-			}
+		&.function + .constant.other.color.rgb-value {
+			color: @hue-4;
 		}
 	}
 	
@@ -366,28 +360,21 @@ atom-text-editor::shadow {
 }
 
 .meta {
-	&.at-rule.import {
-		.support.function {
-			color: @hue-6;
-		}
+	&.at-rule.import .support.function {
+		color: @hue-6;
 	}
 	
-	&.delimiter.method {
-		& + .support.function {
-			color: @hue-1;
-		}
+	&.delimiter.method + .support.function,
+	&.function.arguments .variable.other,
+	&.method-call .meta.method,
+	&.symbol {
+		color: @hue-1;
 	}
 	
 	&.function,
 	&.method,
 	&.method-call {
 		.entity.name.function {
-			color: @hue-1;
-		}
-	}
-	
-	&.function.arguments {
-		.variable.other {
 			color: @hue-1;
 		}
 	}
@@ -407,16 +394,8 @@ atom-text-editor::shadow {
 		}
 	}
 	
-	&.method-call {
-		.meta.method {
-			color: @hue-1;
-		}
-	}
-	
-	&.property-value {
-		.variable.parameter {
-			color: @hue-3;
-		}
+	&.property-value .variable.parameter {
+		color: @hue-3;
 	}
 	
 	&.scope.prerequisites {
@@ -424,13 +403,11 @@ atom-text-editor::shadow {
 	}
 	
 	&.structure.json {
-		&.dictionary {
-			& > .string.quoted {
-				color: @hue-1;
+		&.dictionary > .string.quoted {
+			color: @hue-1;
 				
-				& > .punctuation.string {
-					color: @palette-1;
-				}
+			& > .punctuation.string {
+				color: @palette-1;
 			}
 		}
 		
@@ -441,10 +418,6 @@ atom-text-editor::shadow {
 				color: @hue-3;
 			}
 		}
-	}
-	
-	&.symbol {
-		color: @hue-1;
 	}
 	
 	&.tag.string {
@@ -507,8 +480,6 @@ atom-text-editor::shadow {
 	}
 }
 
-.source.go {
-	.entity.name.function {
-		color: @hue-1;
-	}
+.source.go .entity.name.function {
+	color: @hue-1;
 }
