@@ -367,7 +367,6 @@ atom-text-editor::shadow {
 	
 	&.delimiter.method + .support.function,
 	&.function.arguments .variable.other,
-	&.method-call .meta.method,
 	&.symbol {
 		color: @hue-1;
 	}
@@ -392,6 +391,14 @@ atom-text-editor::shadow {
 			.punctuation {
 				color: @palette-1;
 			}
+		}
+	}
+	
+	&.method-call .meta.method {
+		color: @hue-1;
+		
+		&.delimiter.period {
+			color: inherit;
 		}
 	}
 	
