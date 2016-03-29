@@ -145,11 +145,17 @@ atom-text-editor::shadow {
 .keyword {
 	color: @hue-2;
 	
-	&.control.at-rule {
-		color: @hue-1;
+	&.control {
+		&.at-rule {
+			color: @hue-1;
+			
+			.keyword {
+				color: inherit;
+			}
+		}
 		
-		.keyword {
-			color: inherit;
+		&.html.elements {
+			color: @hue-5;
 		}
 	}
 	
