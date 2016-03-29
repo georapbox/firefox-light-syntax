@@ -266,6 +266,11 @@ atom-text-editor::shadow {
 
 .punctuation {
 	&.definition {
+		&.entity,
+		&.variable {
+			color: inherit;
+		}
+		
 		&.entry,
 		&.table {
 			color: @palette-1;
@@ -278,10 +283,6 @@ atom-text-editor::shadow {
 			&.xml {
 				color: @palette-1;
 			}
-		}
-		
-		&.variable {
-			color: inherit;
 		}
 	}
 	
@@ -394,7 +395,7 @@ atom-text-editor::shadow {
 		}
 	}
 	
-	&.property-value .variable.parameter {
+	&.property-value .variable.parameter.misc {
 		color: @hue-3;
 	}
 	
