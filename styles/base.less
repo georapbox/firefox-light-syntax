@@ -74,20 +74,13 @@ atom-text-editor::shadow {
 }
 
 .entity {
-	&.c, &.clojure, &.cs, &.coffee, &.git-config, &.go, &.java, &.makefile, &.objc, &.objcpp, &.perl6, &.perl, &.php, &.python, &.ruby, &.shell, &.sql {
-		color: @hue-1;
-	}
-	
-	&.gfm {
+	&.c, &.clojure, &.cs, &.coffee, &.gfm, &.git-config, &.go, &.java, &.makefile, &.objc, &.objcpp, &.perl6, &.perl, &.php, &.python, &.ruby, &.shell, &.sql {
 		color: @hue-1;
 	}
 	
 	&.name {
 		&.function {
-			&.constructor {
-				color: @hue-1;
-			}
-			
+			&.constructor,
 			&.scss {
 				color: @hue-1;
 			}
@@ -209,10 +202,7 @@ atom-text-editor::shadow {
 }
 
 .constant {
-	&.character.entity {
-		color: @hue-6;
-	}
-	
+	&.character.entity,
 	&.language {
 		color: @hue-6;
 	}
@@ -223,21 +213,15 @@ atom-text-editor::shadow {
 	
 	&.other {
 		&.bareword,
-		&.key {
+		&.java,
+		&.key,
+		&.property {
 			color: @hue-1;
 		}
 		
 		&.color.rgb-value,
 		&.rgb-value {
 			color: @hue-6;
-		}
-		
-		&.java {
-			color: @hue-1;
-		}
-		
-		&.property {
-			color: @hue-1;
 		}
 		
 		&.rune {
@@ -251,7 +235,9 @@ atom-text-editor::shadow {
 }
 
 .variable {
-	&.c, &.clojure, &.cs, &.coffee, &.git-config, &.go, &.java, &.makefile, &.objc, &.objcpp, &.perl6, &.perl, &.python, &.ruby, &.shell, &.sql, &.toml {
+	&.c, &.clojure, &.cs, &.coffee, &.git-config, &.go, &.java, &.makefile, &.objc, &.objcpp, &.perl6, &.perl, &.python, &.ruby, &.shell, &.sql, &.toml,
+	&.other.property,
+	&.parameter.function {
 		color: @hue-1;
 	}
 	
@@ -262,24 +248,16 @@ atom-text-editor::shadow {
 	&.language {
 		color: @hue-2;
 	}
-	
-	&.other.property {
-		color: @hue-1;
-	}
-	
-	&.parameter.function {
-		color: @hue-1;
-	}
 }
 
 .string {
 	color: @hue-3;
 	
-	.embedded {
+	&.other.math {
 		color: @palette-1;
 	}
 	
-	&.other.math {
+	.embedded {
 		color: @palette-1;
 	}
 	
@@ -352,7 +330,8 @@ atom-text-editor::shadow {
 	}
 	
 	&.constant {
-		&.color.w3c-standard-color-name {
+		&.color.w3c-standard-color-name,
+		&.property-value {
 			color: @hue-6;
 		}
 		
@@ -360,16 +339,9 @@ atom-text-editor::shadow {
 			color: @hue-5;
 		}
 		
-		&.js {
-			color: @hue-1;
-		}
-		
+		&.js,
 		&.media {
 			color: @hue-1;
-		}
-		
-		&.property-value {
-			color: @hue-6;
 		}
 	}
 	
@@ -485,14 +457,11 @@ atom-text-editor::shadow {
 }
 
 .invalid {
+	background-color: @syntax-color-removed;
+	color: @palette-3;
+	
 	&.deprecated {
 		background-color: @syntax-color-modified;
-		color: @palette-3;
-	}
-	
-	&.illegal {
-		background-color: @syntax-color-removed;
-		color: @palette-3;
 	}
 }
 
