@@ -245,6 +245,10 @@ atom-text-editor::shadow {
 	&.language {
 		color: @hue-2;
 	}
+	
+	&.php {
+		color: @palette-1;
+	}
 }
 
 .string {
@@ -287,6 +291,10 @@ atom-text-editor::shadow {
 	}
 	
 	&.section {
+		&.array {
+			color: @palette-1;
+		}
+		
 		&.embedded {
 			&.coffee,
 			&.js,
