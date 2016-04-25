@@ -442,11 +442,10 @@ atom-text-editor::shadow {
 }
 
 .invalid {
-	background-color: @syntax-color-removed;
-	color: @palette-3;
+	border-bottom: 1px dashed @syntax-color-removed;
 	
 	&.deprecated {
-		background-color: @syntax-color-modified;
+		border-bottom-color: @syntax-color-modified;
 	}
 }
 
